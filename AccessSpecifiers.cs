@@ -11,10 +11,12 @@ namespace Batch35
     /// public,private,internal,[protected, internal protected]-inheritance(child class)
     /// OOPS - Class,Object,Abstraction,Encapsulation,Inheritance,Polymorphism
     /// </summary>
-    internal class AccessSpecifiers
+    public class AccessSpecifiers
     {
         private int _count = 0;
-
+        /// <summary>
+        /// prop - double tab
+        /// </summary>
         public int Count
         {
             get

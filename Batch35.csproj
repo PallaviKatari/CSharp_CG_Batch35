@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Batch35.Encapsulation</StartupObject>
+    <StartupObject>Batch35.PassByOut</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessSpecifiers.cs" />
+    <Compile Include="Arrays.cs" />
     <Compile Include="Methods.cs" />
+    <Compile Include="ParamArray.cs" />
+    <Compile Include="PassByOut.cs" />
+    <Compile Include="PassByValRef.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringDemo.cs" />
