@@ -28,7 +28,7 @@ namespace Batch35
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="sno"></param>
-        public void Details<T>(T sno)
+        public void Details(T sno)
         {
             Console.WriteLine("SNO is:{0}", sno);
         }
