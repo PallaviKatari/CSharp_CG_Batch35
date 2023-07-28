@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <LangVersion>latest</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6B2737B5-A001-4AE2-A07D-317061D9C0BD}</ProjectGuid>
@@ -33,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Batch35.PassByOut</StartupObject>
+    <StartupObject>Batch35.Partial</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,15 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2Dto1DArray.cs" />
     <Compile Include="AccessSpecifiers.cs" />
     <Compile Include="Arrays.cs" />
+    <Compile Include="Collections.cs" />
+    <Compile Include="Generics.cs" />
     <Compile Include="Methods.cs" />
+    <Compile Include="Namespaces.cs" />
+    <Compile Include="Nullables.cs" />
     <Compile Include="ParamArray.cs" />
+    <Compile Include="PartialClass2.cs" />
+    <Compile Include="PartialClassesMethods.cs" />
     <Compile Include="PassByOut.cs" />
     <Compile Include="PassByValRef.cs" />
+    <Compile Include="PassObjasPara.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringDemo.cs" />
+    <Compile Include="Structures.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
