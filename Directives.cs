@@ -1,6 +1,7 @@
 ﻿#define version0
 #define version1
 #define version2
+
 //Preprocessor Directives in C# tell the compiler to process the given information before actual 
 //compilation of the program starts. It begins with a hashtag symbol (#) and since these 
 //preprocessors are not statements so no semi-colon is appended at the end. The C# compiler 
@@ -44,10 +45,10 @@ namespace Batch35
                 Console.WriteLine("Enter Xvalue,Yvalue to check version compatibility with ADD and Sub Operation");
 
                 Console.WriteLine("Enter Xvalue:");
-                x = Convert.ToInt32(Console.ReadLine());
+                x = Convert.ToInt32(Console.ReadLine());//10
 
                 Console.WriteLine("Enter Yvalue:");
-                y = Convert.ToInt32(Console.ReadLine());
+                y = Convert.ToInt32(Console.ReadLine());//20
                 objVer1.GetData(x, y);
                 Console.WriteLine("AddOperation Result is:" + objVer1.AddOperation());
                 Console.WriteLine("SubOperation is not working with this version \n\n\n\n");
@@ -64,10 +65,10 @@ namespace Batch35
                 Console.WriteLine("Enter Xvalue,Yvalue to check version2 compatibility with ADD and Sub Operation");
 
                 Console.WriteLine("Enter Xvalue:");
-                x = Convert.ToInt32(Console.ReadLine());
+                x = Convert.ToInt32(Console.ReadLine());//10
 
                 Console.WriteLine("Enter Yvalue:");
-                y = Convert.ToInt32(Console.ReadLine());
+                y = Convert.ToInt32(Console.ReadLine());//5
                 objVer2.GetData(x, y);
                 Console.WriteLine("AddOperation Result is(Based on the default values version - 2 is):"+objVer2.AddOperation(10,12));
                 Console.WriteLine("SubOperation Result is (Based on user input):" +

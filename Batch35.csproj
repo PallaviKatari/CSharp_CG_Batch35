@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Batch35.ProgramEvents</StartupObject>
+    <StartupObject>Batch35.Enumeration</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,10 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2Dto1DArray.cs" />
+    <Compile Include="Abstraction.cs" />
     <Compile Include="AccessSpecifiers.cs" />
     <Compile Include="Arrays.cs" />
     <Compile Include="Collections.cs" />
     <Compile Include="Directives.cs" />
+    <Compile Include="Directives1.cs" />
+    <Compile Include="Enumeration.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Generics.cs" />
     <Compile Include="Methods.cs" />
