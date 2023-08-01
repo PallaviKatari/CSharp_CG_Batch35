@@ -42,7 +42,7 @@ namespace Batch35
                 Console.WriteLine(name);
 
             }
-            var names1 = trainees.Select(x => new { Age = x.Age, FirstLetter = x.Name[0] }); 
+            var names1 = trainees.Select(x => new { TAge = x.Age, FirstLetter = x.Name[0] }); 
             foreach (var name in names1)
             {
                 Console.WriteLine(name);

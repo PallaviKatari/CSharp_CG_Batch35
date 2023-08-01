@@ -36,15 +36,15 @@ namespace Batch35
     {
         public string Name { get; set; }
 
-        //public virtual string Introduce() => $"Hi, I'm {Name}.";
-        public string Introduce() => $"Hi, I'm {Name}.";
+        public virtual string Introduce() => $"Hi, I'm {Name}.";
+        //public string Introduce() => $"Hi, I'm {Name}.";
     }
 
     class Employee : Person
     {
         public string JobTitle { get; set; }
 
-        //public override string Introduce() => $"Hi, I'm {Name}. I'm a {JobTitle}.";
-        public new string Introduce() => $"Hi, I'm {Name}. I'm a {JobTitle}.";
+        public override string Introduce() => $"Hi, I'm {Name}. I'm a {JobTitle}.";
+        //public new string Introduce() => $"Hi, I'm {Name}. I'm a {JobTitle}.";
     }
 }

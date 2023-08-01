@@ -48,13 +48,10 @@ namespace Batch35
                num = value;
             }
         }
-
         public override void Calculate()
         {
             Console.WriteLine($"{name} and {num+num}");
         }
-
-
     }
     internal class Sub: Abstraction
     {
@@ -80,13 +77,10 @@ namespace Batch35
                 num = value;
             }
         }
-
         public override void Calculate()
         {
             Console.WriteLine($"{name} and {num - num}");
         }
-
-
     }
     public class AbstractionDemo
     {
@@ -101,8 +95,7 @@ namespace Batch35
             demo.Name = "Peter";
             demo.Value = 20;
             demo.Calculate();
-            Console.ReadLine();
-            
+            Console.ReadLine();            
         }
     }
 }
