@@ -39,6 +39,7 @@ namespace Batch35
 
                 return name.Count(e => e.Equals(c));
             }
+            Console.WriteLine("***********");
 
         }
 
@@ -52,27 +53,16 @@ namespace Batch35
 
         public static void Example3()
         {
-            var words = new List<string> { "IIT", "IT" };
-            words.ForEach(x => Console.WriteLine(Regex.IsMatch(x, @"IT") + " " + x));
+            var words = new List<string> {"Dog", "Cat", "Rat" };
+            words.ForEach(x => Console.WriteLine(Regex.IsMatch(x, @"at") + " " + x));
+            Console.WriteLine("***********");
 
-            var result = new Regex(@"IT", RegexOptions.Compiled);
-            foreach (string word in words)
-            {
-                if (result.IsMatch(word))
-                {
-                    Console.WriteLine(word + " Matches");
-                }
-                else
-                {
-                    Console.WriteLine(word + " does not match");
-                }
-            }
         }
 
         public static void Example4()
         {
             string str = "CSharp is a modern cSharp language and CSharp is easy CSharp to learn";
-            Console.WriteLine("Match the word starting with C and ending with p");
+            //Console.WriteLine("Match the word starting with C and ending with p");
             MatchCollection match = Regex.Matches(str, @"\b[c|C]\S*p\b");
             int count = 0;
             foreach (Match word in match)
@@ -81,32 +71,34 @@ namespace Batch35
                 Console.WriteLine($"{word}");
             }
             Console.WriteLine($"Total: {count}");
+            Console.WriteLine("***********");
         }
 
         public static void Example5()
         {
             var mobile = new List<string> { "983567287", "8745638287" };
             mobile.ForEach(x => Console.WriteLine(Regex.IsMatch(x, @"(^[0-9]{10}$)") + " " + x));
-            foreach (string m in mobile)
-            {
-                Console.WriteLine(m);
-                Console.WriteLine(checkMobile(m)); //False
-            }
+            //foreach (string m in mobile)
+            //{
+            //    Console.WriteLine(m);
+            //    Console.WriteLine(checkMobile(m)); //False
+            //}
+            //Console.WriteLine("***********");
         }
 
-        public static bool checkMobile(string mobile)
-        {
-            string mregexp = @"(^[0-9]{10}$)"; //983567287
-            Regex r = new Regex(mregexp);
-            if (r.IsMatch(mobile)) //983567287
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //public static bool checkMobile(string mobile)
+        //{
+        //    string mregexp = @"(^[0-9]{10}$)"; //983567287
+        //    Regex r = new Regex(mregexp);
+        //    if (r.IsMatch(mobile)) //983567287
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
         static void Main(string[] args)
         {
