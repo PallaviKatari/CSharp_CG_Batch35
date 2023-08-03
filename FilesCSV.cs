@@ -20,7 +20,7 @@ namespace Batch35
             // output
             foreach (var r in records)
             {
-                Console.WriteLine($"{r.FirstName,-10}{r.LastName,-5}{r.Date,-15}{r.Day,-15}");
+                Console.WriteLine($"{r.FirstName,-10}{r.LastName,-10}{r.Date,-15}{r.Day,-15}");
             }
             Console.WriteLine("************************************");
             ReadCsv();
@@ -92,13 +92,19 @@ namespace Batch35
             String separator = ",";
             StringBuilder output = new StringBuilder();
             String[] headings = { "StudentID", "First Name", "Last Name", "Date Of Birth" };
+            //StudentID,First Name,Last Name,Date Of Birth
             output.AppendLine(string.Join(separator, headings));
 
             foreach (Student student in students)
             {
                 //String[] newLine = { student.StudentId.ToString(), student.FirstName, student.LastName, student.Dob };
                 //output.AppendLine(string.Join(separator, newLine));
+                //1, John, Smith, 03/04/1990
                 string newLine = string.Format("{0}, {1}, {2}, {3}", student.StudentId.ToString(), student.FirstName, student.LastName, student.Dob);
+                //StudentID,First Name,Last Name,Date Of Birth
+                //1, John, Smith, 03/04/1990
+                //.....
+                //5, Jake, Smith, 04/04/1994
                 output.AppendLine(string.Join(separator, newLine));
             }
             try
