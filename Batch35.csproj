@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Batch35.FilesCSV</StartupObject>
+    <StartupObject>Batch35.Delegates.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CsvHelper, Version=30.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
@@ -81,6 +81,7 @@
     <Compile Include="Arrays.cs" />
     <Compile Include="Collections.cs" />
     <Compile Include="CustomException.cs" />
+    <Compile Include="Delegates.cs" />
     <Compile Include="Directives.cs" />
     <Compile Include="Directives1.cs" />
     <Compile Include="Enumeration.cs" />
