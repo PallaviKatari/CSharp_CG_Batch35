@@ -82,6 +82,7 @@
     <Compile Include="Collections.cs" />
     <Compile Include="CustomException.cs" />
     <Compile Include="Delegates.cs" />
+    <Compile Include="Delegates1.cs" />
     <Compile Include="Directives.cs" />
     <Compile Include="Directives1.cs" />
     <Compile Include="Enumeration.cs" />

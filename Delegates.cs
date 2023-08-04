@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Security.Cryptography;
-using System.Security.Policy;
 
 namespace Batch35
 {
@@ -76,7 +73,7 @@ namespace Batch35
                 nums.Add(82);
                 nums.Add(94);
 
-                //list - foreach element
+                //list - foreach element x=>
                 nums.ForEach(delegate (int num)
                 {
                     Console.WriteLine(num);
@@ -85,7 +82,8 @@ namespace Batch35
                 //The body of the function is just a single statement to print the element to console.
             }
 
-            public delegate bool isPromote(Employee emp);
+            public delegate bool isPromote(Employee emp); // -> promote(Employee emp)
+
             public class Employee
             {
                 public int ID { get; set; }
@@ -93,6 +91,11 @@ namespace Batch35
                 public int salary { get; set; }
                 public float Experience { get; set; }
 
+                /// <summary>
+                /// Iterate thro the Employee class - check the delgate ref
+                /// </summary>
+                /// <param name="EmployeeList">List Generic - properties from the Employee class</param>
+                /// <param name="IsEligible">instance of the delegate - reference of promote method</param>
                 public static void PromoteEmp(List<Employee> EmployeeList, isPromote IsEligible)
                 {
                     foreach (Employee emp in EmployeeList)
@@ -101,12 +104,17 @@ namespace Batch35
                         {
                             Console.WriteLine(emp.Name + " Promoted");
                         }
+                        else
+                        {
+                            Console.WriteLine(emp.Name + " Not Promoted");
+
+                        }
                     }
                 }
 
                 public static bool promote(Employee emp)
                 {
-                    if (emp.Experience >= 5)
+                    if (emp.Experience >= 5) //3
                     {
                         return true;
                     }
@@ -257,10 +265,10 @@ namespace Batch35
                 SampleDelegate dlgt = m.Add;
                 dlgt(10, 90);
                 // or
-                // dlgt.Invoke(10, 90);
+                //dlgt.Invoke(10, 90);
                 // Instantiate delegate with subtract method
                 dlgt = m.Subtract;
-                dlgt(10, 90);
+                dlgt(100, 90);
                 Console.WriteLine("**********************************");
 
                 //EXAMPLE 2 - MULTICAST DELEGATE
@@ -268,18 +276,18 @@ namespace Batch35
                 MathOperations1 m1 = new MathOperations1();
                 // Instantiate delegate with add method
                 SampleDelegate1 dlgt1 = m1.Add;
-                dlgt += m1.Subtract;
-                dlgt += m1.Multiply;
-                dlgt(10, 90);
-                dlgt -= m1.Subtract;
-                dlgt(10, 10);
+                dlgt1 += m1.Subtract;
+                dlgt1 += m1.Multiply;
+                dlgt1(10, 90);
+                dlgt1 -= m1.Subtract;
+                dlgt1(10, 10);
                 Console.WriteLine("**********************************");
 
                 //EXAMPLE 3 - Pass Method as Parameter using Delegate
                 MathOperations2 m2 = new MathOperations2();
-                MathOperations2.SampleMethod(m2.Add, 10, 90);
-                MathOperations2.SampleMethod(m2.Subtract, 10, 90);
-                MathOperations2.SampleMethod(m2.Multiply, 10, 90);
+                MathOperations2.SampleMethod(m2.Add, 10, 90); //dlgt(10,90)
+                MathOperations2.SampleMethod(m2.Subtract, 100, 90);//dlgt(100,90)
+                MathOperations2.SampleMethod(m2.Multiply, 10, 10);//dlgt(10,10)
                 Console.WriteLine("**********************************");
 
                 //EXAMPLE 4 - DELEGATE DEMOS
