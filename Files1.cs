@@ -25,9 +25,9 @@ namespace Batch35
                 Console.WriteLine(ex.Message);
             }
             finally
-            { 
+            {
                 streamWriter.Close();
-                fileStream.Close(); 
+                fileStream.Close();
             }
         }
         public static void read()
@@ -37,8 +37,8 @@ namespace Batch35
             StreamReader streamReader = new StreamReader(fileStream);
             try
             {
-               string data= streamReader.ReadToEnd();
-               Console.WriteLine(data);
+                string data = streamReader.ReadToEnd();
+                Console.WriteLine(data);
 
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace Batch35
         {
             FileInfo fileInfo = new FileInfo(@"E:\Batch35.txt");
             FileStream fileStream = fileInfo.Open(FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
-            StreamWriter streamWriter= new StreamWriter(fileStream);
+            StreamWriter streamWriter = new StreamWriter(fileStream);
             try
             {
                 streamWriter.WriteLine("I am an appended content");
@@ -71,6 +71,25 @@ namespace Batch35
                 fileStream.Close();
             }
         }
+
+        public static void FileExists()
+        {
+            string path = @"E:\B35.txt";
+
+            //Exists
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            else
+            {
+                using (StreamWriter sw = File.CreateText(@"E:\B35.txt"))
+                {
+                    sw.WriteLine("I am a Content created directly by a StreamWrite helper class");
+                }
+            }
+            Console.WriteLine("-----------------------------------------");
+        }
         public static void FilesDemo()
         {
             File.WriteAllText(@"E:\Batch35Files.txt", "I am a file created by WriteAllText Method");
@@ -81,7 +100,7 @@ namespace Batch35
             Console.WriteLine(fileInfo.CreationTime);
             Console.WriteLine(fileInfo.Extension);
             Console.WriteLine("***************************");
-            foreach(string files in Directory.GetFiles(@"E:\"))
+            foreach (string files in Directory.GetFiles(@"E:\"))
             {
                 Console.WriteLine(files);
             }
@@ -93,7 +112,7 @@ namespace Batch35
         }
         public static void helperWrite()
         {
-            using (StreamWriter sw=File.CreateText(@"E:\HelperFile.txt"))
+            using (StreamWriter sw = File.CreateText(@"E:\HelperFile.txt"))
             {
                 sw.WriteLine("I am a Content created directly by a StreamWrite helper class");
             }
@@ -101,13 +120,16 @@ namespace Batch35
 
         static void Main(string[] args)
         {
-            //write();
+            write();
             append();
             read();
             Console.WriteLine(" * **************************");
             FilesDemo();
             Console.WriteLine(" * **************************");
             helperWrite();
+            Console.WriteLine(" * **************************");
+            FileExists();
+
         }
     }
 }

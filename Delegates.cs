@@ -88,7 +88,7 @@ namespace Batch35
             {
                 public int ID { get; set; }
                 public string Name { get; set; }
-                public int salary { get; set; }
+                public int Salary { get; set; }
                 public float Experience { get; set; }
 
                 /// <summary>
@@ -127,10 +127,10 @@ namespace Batch35
                 public static void Example2()
                 {
                     List<Employee> empl = new List<Employee>();
-                    empl.Add(new Employee() { ID = 101, Name = "John", salary = 35000, Experience = 3 });
-                    empl.Add(new Employee() { ID = 102, Name = "Peter", salary = 30000, Experience = 5 });
-                    empl.Add(new Employee() { ID = 103, Name = "Roger", salary = 38000, Experience = 8 });
-                    empl.Add(new Employee() { ID = 104, Name = "Sam", salary = 32000, Experience = 2 });
+                    empl.Add(new Employee() { ID = 101, Name = "John", Salary = 35000, Experience = 3 });
+                    empl.Add(new Employee() { ID = 102, Name = "Peter", Salary = 30000, Experience = 5 });
+                    empl.Add(new Employee() { ID = 103, Name = "Roger", Salary = 38000, Experience = 8 });
+                    empl.Add(new Employee() { ID = 104, Name = "Sam", Salary = 32000, Experience = 2 });
 
                     isPromote pro = new isPromote(promote);
                     Employee.PromoteEmp(empl, pro);
