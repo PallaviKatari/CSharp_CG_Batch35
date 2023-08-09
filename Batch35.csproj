@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Batch35.Tuples</StartupObject>
+    <StartupObject>Batch35.Indexers1</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CsvHelper, Version=30.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
@@ -83,6 +83,7 @@
     <Compile Include="Arrays.cs" />
     <Compile Include="AsyncAwait.cs" />
     <Compile Include="Attributes.cs" />
+    <Compile Include="CmdLineArgument.cs" />
     <Compile Include="Collections.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -94,6 +95,7 @@
     <Compile Include="CustomBugFixAttribute.cs" />
     <Compile Include="CustomException.cs" />
     <Compile Include="Indexer.cs" />
+    <Compile Include="Indexers1.cs" />
     <Compile Include="PointersDemo.cs" />
     <Compile Include="DefaultThreadDemo.cs" />
     <Compile Include="Delegates.cs" />
