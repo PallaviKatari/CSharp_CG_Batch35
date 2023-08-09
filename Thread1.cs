@@ -14,21 +14,24 @@ namespace Batch35
     /// </summary>
     internal class Thread1
     {
-          static void Main(string[] args)
+        static void Main(string[] args)
         {
             //WITHOUT THREADS
-            Console.WriteLine("WITHOUT THREADS");
-            Method1();
-            Method2();
-            Method3();
+            //Console.WriteLine("WITHOUT THREADS");
+            //Method1();
+            //Method2();
+            //Method3();
+            //Console.WriteLine("*********************************");
+            //Console.WriteLine("WITH THREAD SLEEP");
+            //Method4();
+            //Method5();
+            //Method6();
+            //Console.WriteLine("*********************************");
+            //Console.WriteLine("MULTI-THREADING");
+            //MultiThreading();
             Console.WriteLine("*********************************");
-            Console.WriteLine("WITH THREAD SLEEP");
-            Method4();
-            Method5();
-            Method6();
-            Console.WriteLine("*********************************");
-            Console.WriteLine("MULTI-THREADING");
-            MultiThreading();
+            Console.WriteLine("MULTI-THREADING CONSOLE");
+            MultiThreadingConsole();
             Console.Read();
         }
         /// <summary>
@@ -41,7 +44,7 @@ namespace Batch35
                 Console.WriteLine("Method1 :" + i);
             }
         }
-        
+
         static void Method2()
         {
             for (int i = 1; i <= 5; i++)
@@ -106,6 +109,10 @@ namespace Batch35
             {
                 Name = "Thread3"
             };
+            // Set the priority of threads
+            //t3.Priority = ThreadPriority.Highest;
+            //t2.Priority = ThreadPriority.Lowest;
+            //t1.Priority = ThreadPriority.Lowest;
             //Executing the methods
             t1.Start();
             t2.Start();
@@ -118,7 +125,7 @@ namespace Batch35
             Console.WriteLine("Method7 Started using " + Thread.CurrentThread.Name);
             for (int i = 1; i <= 5; i++)
             {
-                Console.WriteLine("Method1 :" + i);
+                Console.WriteLine("Method7 :" + i);
             }
             Console.WriteLine("Method7 Ended using " + Thread.CurrentThread.Name);
         }
@@ -147,6 +154,46 @@ namespace Batch35
             }
             Console.WriteLine("Method9 Ended using " + Thread.CurrentThread.Name);
         }
-    
-}
+        public static void MultiThreadingConsole()
+        {
+            Console.WriteLine("Main Thread Started");
+            //Creating Threads
+            Thread t4 = new Thread(Method10)
+            {
+                Name = "Thread4"
+            };
+            Thread t5 = new Thread(Method11)
+            {
+                Name = "Thread5"
+            };
+
+            //Executing the methods
+            t4.Start();
+            t5.Start();
+
+            Console.WriteLine("Main Thread Ended");
+            Console.Read();
+        }
+        static void Method10()
+        {
+            Console.ForegroundColor= ConsoleColor.Green;
+            Console.WriteLine("Method10 Started using " + Thread.CurrentThread.Name);
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("Method10 :" + i);
+            }
+            Console.WriteLine("Method10 Ended using " + Thread.CurrentThread.Name);
+        }
+        static void Method11()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Method11 Started using " + Thread.CurrentThread.Name);
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("Method11 :" + i);
+            }
+            Console.WriteLine("Method11 Ended using " + Thread.CurrentThread.Name);
+        }
+
+    }
 }

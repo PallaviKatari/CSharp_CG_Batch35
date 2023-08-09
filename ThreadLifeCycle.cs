@@ -9,7 +9,7 @@ namespace Batch35
 {
     internal class ThreadLifeCycle
     {
-        public static void CallToChildThread()
+        public static void CallToChildThread() // Running 
         {
             try
             {
@@ -18,7 +18,7 @@ namespace Batch35
                 // do some work, like counting to 10
                 for (int counter = 0; counter <= 10; counter++)
                 {
-                    Thread.Sleep(500);
+                    Thread.Sleep(500); // Not Runnable
                     Console.WriteLine(counter);
                 }
 
@@ -39,11 +39,11 @@ namespace Batch35
             ThreadStart childref = new ThreadStart(CallToChildThread);
             Console.WriteLine("In Main: Creating the Child thread");
 
-            Thread childThread = new Thread(childref);
-            childThread.Start();
+            Thread childThread = new Thread(childref); // Unstarted
+            childThread.Start(); // Runnable
 
             //stop the main thread for some time
-            Thread.Sleep(5000);
+            Thread.Sleep(1000);
 
             //now abort the child
             Console.WriteLine("In Main: Aborting the Child thread");

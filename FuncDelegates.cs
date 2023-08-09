@@ -11,7 +11,6 @@ namespace Batch35
         public static void Result(int value, Delegate d)
         {
             Mul(value);
-
         }
 
         public static int Mul(int num)
