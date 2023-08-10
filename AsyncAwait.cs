@@ -16,9 +16,10 @@ namespace Batch35
         static async Task Main(string[] args)
         {
             Console.WriteLine("Main Method Started......");
-            FirstMethod();
-            SecondMethod();
-            Task<int> result = LongProcess();
+            //FirstMethod();
+            //FirstMethod1();
+            //SecondMethod();
+            Task<int> result = LongProcess(); //10
             ShortProcess();
             var val = await result; // wait until we get the return value
             Console.WriteLine("Result: {0}", val);
@@ -33,6 +34,13 @@ namespace Batch35
         //    Thread.Sleep(TimeSpan.FromSeconds(10));
         //    Console.WriteLine("\n");
         //    Console.WriteLine("First Method End");
+        //}
+        //public static void FirstMethod1()
+        //{
+        //    Console.WriteLine("First Method 1 Started......");
+        //    //Thread.Sleep(TimeSpan.FromSeconds(10));
+        //    Console.WriteLine("\n");
+        //    Console.WriteLine("First Method 1 End");
         //}
 
         //Example 2 - Asynchronous programming - async await Task
@@ -69,7 +77,7 @@ namespace Batch35
         /// </summary>
         /// <returns></returns>
 
-        static async Task<int> LongProcess()
+        static async Task<int> LongProcess() // Main()
         {
             Console.WriteLine("LongProcess Started");
 

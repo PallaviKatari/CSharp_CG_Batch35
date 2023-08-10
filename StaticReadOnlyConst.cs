@@ -15,7 +15,7 @@ namespace Batch35
             //mc.ChangeVal(45);
             mc.Display();
 
-            Console.WriteLine("MyClass.constvar = {0}", MyClass1.constvar);
+            //Console.WriteLine("MyClass.constvar = {0}", MyClass1.constvar);
             Console.WriteLine("MyClass.staticvar = {0}", MyClass1.staticvar);
             Console.WriteLine("mc.instancevar = {0}", mc.instancevar);
             Console.WriteLine("mc1.instancevar = {0}", mc1.instancevar);
@@ -27,6 +27,7 @@ namespace Batch35
     public class MyClass1
     {
         public readonly int readonlyvar1 = 10, readonlyvar2;
+
         public const int constvar = 20;
 
         //If we want a variable to have the same value throughout all instances of
@@ -36,7 +37,7 @@ namespace Batch35
         //instance variable
         public int instancevar;
 
-        public MyClass1(int i)
+        public MyClass1(int i) //50 
         {
             readonlyvar1 = i;
             readonlyvar2 = i; // valid                            
@@ -59,13 +60,14 @@ namespace Batch35
             Console.WriteLine("Instance:{0}", instancevar);
             Console.WriteLine("Constant:{0}", constvar);
             int a;
-            Console.WriteLine("Enter value of a");
-            a=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter value of a"); //60
+            a = Convert.ToInt32(Console.ReadLine());
             //readonlyvar1 = a;
             //readonlyvar2 = a;
             staticvar = a;
-            instancevar=a;
+            instancevar = a;
             Console.WriteLine(staticvar);
+            Console.WriteLine(instancevar);
         }
     }
 }

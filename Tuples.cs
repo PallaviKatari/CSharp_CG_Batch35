@@ -14,29 +14,47 @@ namespace Batch35
     /// data structure which contains objects with their properties 
     /// and you don’t want to create a separate type for that.
     /// </summary>
+    /// 
+    //public class Employee35a
+    //{
+    //    public int EmployeeId { get; set; }
+    //    public string Name { get; set; }
+    //    public string Gender { get; set; }
+    //    public double Salary { get; set; }
+
+    //    public void Display()
+    //    {
+    //        var u1 = Tuple.Create(100,"John", "Male", 25000);
+    //    }
+    //}
     internal class Tuples
     {
         static void Main(string[] args)
         {
             //we create a new tuple using the old and the new way.
 
-            //old way
+            //Example 1 - old way
             var u1 = Tuple.Create("John", "Doe", "Developer");
             Console.WriteLine($"{u1.Item1} {u1.Item2} is a {u1.Item3}");
 
-            //new way
+            var emp = Tuple.Create(100, "John", "Male", "Developer");
+            Console.WriteLine($"{emp.Item2}-{emp.Item1} is a {emp.Item4}");
+
+            //Example 2 - new way
             var u2 = ("Roger", "Moore", "Actor");
             Console.WriteLine($"{u2.Item1} {u2.Item2} is a {u2.Item3}");
 
             Console.WriteLine("************************");
 
-            //We can name our tuple fields.
+            //Example 3 - We can name our tuple fields.
             var u3 = (Name: "John Doe", Age: 34);
             Console.WriteLine($"{u3.Name} is {u3.Age} years old");
 
+            //Example 4 - We can name our tuple fields with specific datatype
             (string Name, int Age) u4 = ("Roger Roe", 55);
             Console.WriteLine($"{u4.Name} is {u4.Age} years old");
 
+            //Example 5 
             var name = "Jane Doe";
             var age = 26;
 
@@ -45,6 +63,7 @@ namespace Batch35
 
             Console.WriteLine("************************");
 
+            //Example 6
             //C# tuple deconstruction
             //We can unpackage all the items in a tuple in a single operation.
             //This is called tuple deconstruction.
@@ -62,6 +81,7 @@ namespace Batch35
 
             Console.WriteLine("************************");
 
+            //Example 7
             //C# nested tuples
             var data = ((1, 2, 3), (3, 4, 5), (6, 7, 8));
             Console.WriteLine(data);
@@ -75,6 +95,7 @@ namespace Batch35
 
             Console.WriteLine("************************");
 
+            //Example 8
             //C# tuple as function parameter
             ShowInfo(("John", "Doe", "programmer"));
             ShowInfo(("Roger", "Moore", "actor"));
@@ -87,6 +108,7 @@ namespace Batch35
 
             Console.WriteLine("************************");
 
+            //Example 9
             //C# tuple as return value
             var user = GetUser();
             Console.WriteLine($"{user.FirstName} {user.LastName} is a {user.Occupation}");
@@ -98,6 +120,7 @@ namespace Batch35
 
             Console.WriteLine("************************");
 
+            //Example 10
             // Creating Tuple of three values  
             var book = new Tuple<string, string, double>("C# in Depth", "Jon Skeet", 100.50);
             Console.WriteLine("-----------------Book's Record---------------------");

@@ -20,9 +20,9 @@ namespace Batch35
             Console.WriteLine();
             Console.WriteLine("Changing the names of employees with Id = 101,105,107");
             //Setting the Name of the Employee using Integer Indexer of Company Object
-            company[101] = "Employee 101 Name Changed to Sharon";
-            company[105] = "Employee 105 Name Changed to Ranita";
-            company[107] = "Employee 107 Name Changed to Harshan";
+            company[101] = "Sharon";
+            company[105] = "Ranita";
+            company[107] = "Harshan";
             Console.WriteLine();
             //Accessing the Name of the Employee using Integer Indexer of Company Object
             Console.WriteLine("Name of Employee with Id = 101: " + company[101]);
