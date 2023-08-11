@@ -11,9 +11,9 @@ namespace Batch35
     /// C# and .NET Framework (4.5 & Core) supports asynchronous programming 
     /// using some native functions, classes, and reserved keywords.
     /// </summary>
-    internal class AsyncAwait
+    public class AsyncAwait
     {
-        static async Task Main(string[] args)
+        public static async Task Main()
         {
             Console.WriteLine("Main Method Started......");
             //FirstMethod();
@@ -23,6 +23,7 @@ namespace Batch35
             ShortProcess();
             var val = await result; // wait until we get the return value
             Console.WriteLine("Result: {0}", val);
+            FuncTask();
             Console.WriteLine("Main Method End");
             Console.ReadKey();
         }
@@ -96,5 +97,21 @@ namespace Batch35
 
             Console.WriteLine("ShortProcess Completed");
         }
+
+        /// <summary>
+        /// Task with Func delegate
+        /// </summary>
+        public static async void FuncTask()
+        {
+            Func<int, int, Task<int>> delaySum = async (a, b) =>
+            {
+                await Task.Delay(100);
+                return a + b;
+            };
+            int sum = await delaySum(10, 10);
+            Console.WriteLine("Func Delegate returning a Task:{0}", sum);
+        }
+
+
     }
 }

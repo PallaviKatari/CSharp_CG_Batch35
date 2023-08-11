@@ -60,26 +60,18 @@ namespace Batch35
         public bool IsStudent { get; set; }
     }
 
-    public record Member
-    {
-        public int Id { get; init; }
-        public string FirstName { get; init; }
-        public string LastName { get; init; }
-        public string Address { get; set; }
-    }
-
     internal class Records
     {
         static void Main(string[] args)
         {
-            Example1Class();
-            WriteLine("****************************");
-            Example1Record();
-            WriteLine("****************************");
-            Example2Init();
-            WriteLine("****************************");
-            Example3Clone();
-            WriteLine("****************************");
+            //Example1Class();
+            //WriteLine("****************************");
+            //Example1Record();
+            //WriteLine("****************************");
+            //Example2Init();
+            //WriteLine("****************************");
+            //Example3Clone();
+            //WriteLine("****************************");
             Example4Struct();
             ReadLine();
 
@@ -174,6 +166,13 @@ namespace Batch35
             WriteLine($"Person details: Name={c.Name}");
             ReadKey();
         }
+        public record Member
+        {
+            public int Id { get; init; }
+            public string FirstName { get; init; }
+            public string LastName { get; init; }
+            public string Address { get; init; }
+        }
 
         /// <summary>
         /// 3- Records can be cloned or updated using ‘with’
@@ -192,9 +191,9 @@ namespace Batch35
 
             var newMember = new Member
             {
-                Id = member.Id,
-                FirstName = member.FirstName,
-                LastName = member.LastName,
+                Id = member.Id, //1
+                FirstName = member.FirstName,//John
+                LastName = member.LastName,//J
                 Address = "Bangalore"
             };
 
@@ -215,11 +214,14 @@ namespace Batch35
             WriteLine($"{newMember1.Id}-{newMember1.FirstName}-{newMember1.LastName}-{newMember1.Address}");
 
             //5- Records are actually not immutable if we don't use init
-            newMember1.Address = "Coimbatore";
+            //newMember1.Address = "Coimbatore";
 
             WriteLine($"{newMember1.Address}");
 
         }
+        /// <summary>
+        /// Records - Record Class and Record Struct
+        /// </summary>
         public record struct Product
         {
             public string Name { get; init; }
@@ -248,8 +250,9 @@ namespace Batch35
                 CategoryId = 1
             };
 
-            //product1.Name = ""; Error Init-only
-            //var newProduct = product1 with { CategoryId = 2 }; // with expression
+            //product1.Name = ""; //Error Init-only
+            var newProduct = product1 with { CategoryId = 2 }; // with expression
+            WriteLine(newProduct);
 
             var product2 = new Product
             {
@@ -257,11 +260,12 @@ namespace Batch35
                 CategoryId = 1
             };
 
-            Console.WriteLine(product1.Equals(product2)); // Returns true
+            //2- Records implement equality
+            WriteLine(product1.Equals(product2)); // Returns true
 
-            Console.WriteLine(product1 == product2); // Returns true. Only allowed on record structs, not allowed on regular structs
+            WriteLine(product1 == product2); // Returns true. Only allowed on record structs, not allowed on regular structs
 
-            Console.WriteLine(product1); // Will output: Product { Name= VideoGame, CategoryId = 1 } but not for a regular struct
+            WriteLine(product1); // Will output: Product { Name= VideoGame, CategoryId = 1 } but not for a regular struct
 
             //Regular Struct
             var product3 = new Product1
@@ -269,10 +273,16 @@ namespace Batch35
                 Name = "VideoGame",
                 CategoryId = 1
             };
+            var product4 = new Product1
+            {
+                Name = "VideoGame",
+                CategoryId = 1
+            };
 
             var newProduct1 = product3 with { CategoryId = 2 }; //with works with regular struct
-            Console.WriteLine(newProduct1); // Will output: Product { Name= VideoGame, CategoryId = 2 } only for a record struct
-           // Console.WriteLine(product1 == product3); // == Not allowed on regular structs
+            WriteLine(product3.Name);
+            WriteLine(newProduct1); // Will output: Product { Name= VideoGame, CategoryId = 2 } only for a record struct
+            //WriteLine(product4 == product3); // == Not allowed on regular structs
         }
     }
 
