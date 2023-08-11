@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Batch35.AsyncAwait</StartupObject>
+    <StartupObject>Batch35.RecordInheritance</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CsvHelper, Version=30.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
@@ -129,7 +129,9 @@
     <Compile Include="Pointers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordInheritance.cs" />
     <Compile Include="Records.cs" />
+    <Compile Include="RecordStruct.cs" />
     <Compile Include="Reflection.cs" />
     <Compile Include="StaticReadOnlyConst.cs" />
     <Compile Include="StringDemo.cs" />
