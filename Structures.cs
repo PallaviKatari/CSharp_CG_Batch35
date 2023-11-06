@@ -34,6 +34,9 @@ namespace Batch35
         static void Main(string[] args)
         {
             TraineeDetails details = new TraineeDetails();
+            TraineeDetails details1;
+            details1.Id = 200;
+            Console.WriteLine(details1.Id);
             details.GetDetails();
             details.DisplayDetails();
             Console.ReadLine();

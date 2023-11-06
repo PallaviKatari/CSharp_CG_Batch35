@@ -36,13 +36,13 @@ namespace Batch35
     }
     internal class Encapsulation
     {
-        static void Main(string[] args)
-        {
-            AccessSpecifiers accessSpecifiers = new AccessSpecifiers();
-            accessSpecifiers.Count = 0;
-            Console.WriteLine(accessSpecifiers.Count);
-            Console.ReadLine();
+        //static void Main(string[] args)
+        //{
+        //    AccessSpecifiers accessSpecifiers = new AccessSpecifiers();
+        //    accessSpecifiers.Count = 0;
+        //    Console.WriteLine(accessSpecifiers.Count);
+        //    Console.ReadLine();
             
-        }
+        //}
     }
 }

@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Batch35.RecordInheritance</StartupObject>
+    <StartupObject>Batch35.classStruct</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CsvHelper, Version=30.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">

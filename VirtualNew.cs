@@ -29,6 +29,7 @@ namespace Batch35
                 Name = "Peter Pan"
             };
             Console.WriteLine(person1.Introduce());
+            Console.ReadLine();
         }
     }
 
